@@ -17,8 +17,6 @@ RUN pip3.5 install -U "pandas>=0.14.0"
 RUN pip3.5 install -U "scikit-learn>=0.14.0"
 RUN pip3.5 install seaborn ggplot
 
-RUN ipython profile create pyspark
-
 ENV PYSPARK_PYTHON python3.5
 ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.9-src.zip
 
