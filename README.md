@@ -4,7 +4,7 @@ Jupyter Notebook with Python 3.5 kernel based on sequenceiq/spark
 Create and start a container:
 
 ```bash
-docker run -p 8888:8888 ceshine/spark-jupyter bash
+docker run -it --rm -p 8888:8888 ceshine/spark-jupyter bash
 ```
 
 Inside the container, run (assuming you're inside /root folder):
@@ -30,7 +30,7 @@ import pyspark
 conf = pyspark.SparkConf()
 
 # point to mesos master or zookeeper entry (e.g., zk://10.10.10.10:2181/mesos)
-conf.setMaster("yarn-cluster")
+conf.setMaster("yarn-client")
 # set other options as desired
 conf.set("spark.executor.memory", "1g")
 conf.set("spark.core.connection.ack.wait.timeout", "1200")
