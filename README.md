@@ -15,7 +15,7 @@ jupyter notebook
 
 (There is a jupyter_notebook_config.py inside /root which saves you certain amounts of typing. You might want to copy and adapt that script into your project folder.)
 
-Now visit [http://<your docker container ip>:8888] and you're good to go!
+Now visit http://<your docker container ip>:8888 and you're good to go!
 
 # Test Notebook
 
