@@ -17,7 +17,6 @@ jupyter notebook
 
 Now visit http://<your docker container ip>:8888 and you're good to go!
 
-
 # Hive Setup
 
 Create required HDFS structure
