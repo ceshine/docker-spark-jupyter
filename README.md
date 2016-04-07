@@ -4,7 +4,7 @@ Jupyter Notebook with Python 3.5 kernel based on sequenceiq/spark
 Create and start a container:
 
 ```bash
-docker run -it --rm -p 8888:8888 ceshine/spark-jupyter bash
+docker run -it --rm -p 8888:8888 -v $(pwd):/root/myproject /ceshine/spark-jupyter bash
 ```
 
 Inside the container, run (assuming you're inside /root folder):
@@ -30,7 +30,7 @@ Re-create metastore if run into troubles:
 
 ```Bash
 rm -rf /hive/metastore_db
-schematool -initSchema -dbType derby
+cd /hive && schematool -initSchema -dbType derby
 ```
 
 # Test Notebook
