@@ -4,7 +4,7 @@ Jupyter Notebook with Python 3.5 kernel based on sequenceiq/spark
 Create and start a container:
 
 ```bash
-docker run -it --rm -p 8888:8888 -v $(pwd):/root/myproject /ceshine/spark-jupyter bash
+docker run -it -p 8888:8888 -p 8088:8088 -p 8042:8042 -p 4040:4040 -h sandbox -v $(pwd):/root/myproject ceshine/spark-jupyter bash
 ```
 
 Inside the container, run (assuming you're inside /root folder):
