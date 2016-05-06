@@ -23,5 +23,6 @@ ENV SPARK_HOME /usr/lib/spark
 ENV PYSPARK_PYTHON python3.5
 ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.9-src.zip
 
+RUN mkdir /src
 ADD jupyter_notebook_config.py /src
 WORKDIR /src
