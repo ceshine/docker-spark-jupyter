@@ -15,7 +15,7 @@ RUN pip3.5 install -U py4j
 RUN pip3.5 install -U  numpy scipy matplotlib
 RUN pip3.5 install -U "pandas>=0.14.0"
 RUN pip3.5 install -U "scikit-learn>=0.14.0"
-RUN pip3.5 install seaborn ggplot
+RUN pip3.5 install seaborn
 
 RUN  ln -s /etc/hive/conf/hive-site.xml /etc/spark/conf
 

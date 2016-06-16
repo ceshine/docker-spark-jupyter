@@ -1,13 +1,14 @@
 # docker-spark-jupyter
-Jupyter Notebook with Python 3.5 kernel based on sequenceiq/spark
+Jupyter Notebook with Python 3.5 kernel based on cloudera/quickstart
 
 Create and start a container:
 
 ```bash
-docker run -it -p 8888:8888 -p 8088:8088 -p 8042:8042 -p 4040:4040 -h sandbox -v $(pwd):/root/myproject ceshine/spark-jupyter bash
+docker run -it -p 8888 -p 8088:8088 -p 8042:8042 -p 4040:4040 -h sandbox -v $(pwd):/root/myproject ceshine/spark-jupyter bash
+docker run --hostname=quickstart.cloudera --privileged=true -t -i -p 18080:18080 -p 8888:8888 -p 9999:9999 -p 7180:7180 -p 9898:80 -p 50070:50070 -v $(pwd):/src/myproject ceshine/spark-jupyter /usr/bin/docker-quickstart
 ```
 
-Inside the container, run (assuming you're inside /root folder):
+Inside the container, run (assuming you're inside /src folder):
 
 ```bash
 jupyter notebook
@@ -16,22 +17,6 @@ jupyter notebook
 (There is a jupyter_notebook_config.py inside /root which saves you certain amounts of typing. You might want to copy and adapt that script into your project folder.)
 
 Now visit http://<your docker container ip>:8888 and you're good to go!
-
-# Hive Setup
-
-Create required HDFS structure
-
-```Bash
-hadoop fs -mkdir -p /user/hive/warehouse && hadoop fs -chmod g+w /user/hive/warehouse
-hadoop fs -mkdir -p /tmp && hadoop fs -chmod g+w /tmp
-```
-
-Re-create metastore if run into troubles:
-
-```Bash
-rm -rf /hive/metastore_db
-cd /hive && schematool -initSchema -dbType derby
-```
 
 # Test Notebook
 
